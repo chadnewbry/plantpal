@@ -2,21 +2,22 @@ import SwiftUI
 
 @main
 struct PlantPalApp: App {
-    let persistenceController: PersistenceController
     @State private var useDummyData = CommandLine.arguments.contains("-dummy-data")
+    @StateObject private var notificationManager = NotificationManager.shared
+
+    private let notificationDelegate = NotificationDelegate()
 
     init() {
-        if CommandLine.arguments.contains("-dummy-data") {
-            persistenceController = .preview
-        } else {
-            persistenceController = .shared
-        }
+        UNUserNotificationCenter.current().delegate = notificationDelegate
     }
 
     var body: some Scene {
         WindowGroup {
             ContentView(useDummyData: useDummyData)
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(notificationManager)
+                .task {
+                    await notificationManager.checkAuthorizationStatus()
+                }
         }
     }
 }
