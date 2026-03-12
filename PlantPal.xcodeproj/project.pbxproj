@@ -17,6 +17,12 @@
 		AA000008 /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000008 /* AnalyticsView.swift */; };
 		AA000009 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000009 /* SettingsView.swift */; };
 		AA00000A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB00000A /* Assets.xcassets */; };
+		AA00000B /* PlantPal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB00000B /* PlantPal.xcdatamodeld */; };
+		AA00000C /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00000C /* PersistenceController.swift */; };
+		AA00000D /* CareType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00000D /* CareType.swift */; };
+		AA00000E /* CDPlant+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00000E /* CDPlant+Extensions.swift */; };
+		AA00000F /* CDCareEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00000F /* CDCareEvent+Extensions.swift */; };
+		AA000010 /* CDCareSchedule+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000010 /* CDCareSchedule+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +37,12 @@
 		AB000009 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AB00000A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC000001 /* PlantPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB00000B /* PlantPal.xcdatamodeld */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlantPal.xcdatamodeld; sourceTree = "<group>"; };
+		AB00000C /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		AB00000D /* CareType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareType.swift; sourceTree = "<group>"; };
+		AB00000E /* CDPlant+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPlant+Extensions.swift"; sourceTree = "<group>"; };
+		AB00000F /* CDCareEvent+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCareEvent+Extensions.swift"; sourceTree = "<group>"; };
+		AB000010 /* CDCareSchedule+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCareSchedule+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +70,9 @@
 				AB000001 /* PlantPalApp.swift */,
 				AB000002 /* ContentView.swift */,
 				AE000003 /* Models */,
+				AE000006 /* CoreData */,
 				AE000004 /* Views */,
+				AB00000B /* PlantPal.xcdatamodeld */,
 				AB00000A /* Assets.xcassets */,
 			);
 			path = PlantPal;
@@ -91,6 +105,18 @@
 				AC000001 /* PlantPal.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AE000006 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				AB00000C /* PersistenceController.swift */,
+				AB00000D /* CareType.swift */,
+				AB00000E /* CDPlant+Extensions.swift */,
+				AB00000F /* CDCareEvent+Extensions.swift */,
+				AB000010 /* CDCareSchedule+Extensions.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +197,12 @@
 				AA000007 /* CalendarView.swift in Sources */,
 				AA000008 /* AnalyticsView.swift in Sources */,
 				AA000009 /* SettingsView.swift in Sources */,
+				AA00000B /* PlantPal.xcdatamodeld in Sources */,
+				AA00000C /* PersistenceController.swift in Sources */,
+				AA00000D /* CareType.swift in Sources */,
+				AA00000E /* CDPlant+Extensions.swift in Sources */,
+				AA00000F /* CDCareEvent+Extensions.swift in Sources */,
+				AA000010 /* CDCareSchedule+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
