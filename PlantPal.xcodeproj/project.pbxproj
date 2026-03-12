@@ -23,6 +23,8 @@
 		AA00000E /* CDPlant+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00000E /* CDPlant+Extensions.swift */; };
 		AA00000F /* CDCareEvent+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00000F /* CDCareEvent+Extensions.swift */; };
 		AA000010 /* CDCareSchedule+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000010 /* CDCareSchedule+Extensions.swift */; };
+		AA000011 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000011 /* NotificationManager.swift */; };
+		AA000012 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000012 /* NotificationDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		AB00000E /* CDPlant+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPlant+Extensions.swift"; sourceTree = "<group>"; };
 		AB00000F /* CDCareEvent+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCareEvent+Extensions.swift"; sourceTree = "<group>"; };
 		AB000010 /* CDCareSchedule+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCareSchedule+Extensions.swift"; sourceTree = "<group>"; };
+		AB000011 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		AB000012 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 				AE000003 /* Models */,
 				AE000006 /* CoreData */,
 				AE000004 /* Views */,
+				AE000007 /* Services */,
 				AB00000B /* PlantPal.xcdatamodeld */,
 				AB00000A /* Assets.xcassets */,
 			);
@@ -117,6 +122,15 @@
 				AB000010 /* CDCareSchedule+Extensions.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		AE000007 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AB000011 /* NotificationManager.swift */,
+				AB000012 /* NotificationDelegate.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +217,8 @@
 				AA00000E /* CDPlant+Extensions.swift in Sources */,
 				AA00000F /* CDCareEvent+Extensions.swift in Sources */,
 				AA000010 /* CDCareSchedule+Extensions.swift in Sources */,
+				AA000011 /* NotificationManager.swift in Sources */,
+				AA000012 /* NotificationDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
