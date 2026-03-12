@@ -25,6 +25,7 @@
 		AA000010 /* CDCareSchedule+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000010 /* CDCareSchedule+Extensions.swift */; };
 		AA000011 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000011 /* NotificationManager.swift */; };
 		AA000012 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000012 /* NotificationDelegate.swift */; };
+		AA000013 /* CloudKitSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000013 /* CloudKitSyncManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		AB000010 /* CDCareSchedule+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCareSchedule+Extensions.swift"; sourceTree = "<group>"; };
 		AB000011 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		AB000012 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
+		AB000013 /* CloudKitSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitSyncManager.swift; sourceTree = "<group>"; };
+		AB000014 /* PlantPal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlantPal.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,7 @@
 				AE000004 /* Views */,
 				AE000007 /* Services */,
 				AB00000B /* PlantPal.xcdatamodeld */,
+				AB000014 /* PlantPal.entitlements */,
 				AB00000A /* Assets.xcassets */,
 			);
 			path = PlantPal;
@@ -129,6 +133,7 @@
 			children = (
 				AB000011 /* NotificationManager.swift */,
 				AB000012 /* NotificationDelegate.swift */,
+				AB000013 /* CloudKitSyncManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 				AA000010 /* CDCareSchedule+Extensions.swift in Sources */,
 				AA000011 /* NotificationManager.swift in Sources */,
 				AA000012 /* NotificationDelegate.swift in Sources */,
+				AA000013 /* CloudKitSyncManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +352,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PlantPal/PlantPal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "Chad Newbry LLC";
@@ -371,6 +378,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PlantPal/PlantPal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "Chad Newbry LLC";

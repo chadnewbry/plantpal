@@ -1,9 +1,10 @@
 import CoreData
+import CloudKit
 
 struct PersistenceController {
     static let shared = PersistenceController()
 
-    let container: NSPersistentContainer
+    let container: NSPersistentCloudKitContainer
 
     static var preview: PersistenceController = {
         let controller = PersistenceController(inMemory: true)
@@ -21,7 +22,6 @@ struct PersistenceController {
             cdPlant.notes = plantData.notes
             cdPlant.dateAdded = plantData.dateAdded
 
-            // Add a default watering schedule
             let schedule = CDCareSchedule(context: context)
             schedule.id = UUID()
             schedule.careType = CareType.water.rawValue
@@ -30,7 +30,6 @@ struct PersistenceController {
             schedule.nextDueDate = Calendar.current.date(byAdding: .day, value: plantData.wateringInterval, to: plantData.lastWatered)
             schedule.plant = cdPlant
 
-            // Add a sample care event
             let event = CDCareEvent(context: context)
             event.id = UUID()
             event.careType = CareType.water.rawValue
@@ -48,10 +47,23 @@ struct PersistenceController {
     }()
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "PlantPal")
+        container = NSPersistentCloudKitContainer(name: "PlantPal")
 
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+            // Disable CloudKit sync for previews/tests
+            container.persistentStoreDescriptions.first?.cloudKitContainerOptions = nil
+        } else {
+            // Configure for private CloudKit database (privacy-first)
+            guard let description = container.persistentStoreDescriptions.first else {
+                fatalError("No persistent store descriptions found")
+            }
+            description.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(
+                containerIdentifier: "iCloud.com.chadnewbry.plantpal"
+            )
+            // Enable persistent history tracking for CloudKit sync
+            description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+            description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
         }
 
         container.loadPersistentStores { _, error in
