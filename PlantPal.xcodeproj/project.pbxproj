@@ -26,6 +26,7 @@
 		AA000011 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000011 /* NotificationManager.swift */; };
 		AA000012 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000012 /* NotificationDelegate.swift */; };
 		AA000013 /* CloudKitSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000013 /* CloudKitSyncManager.swift */; };
+		AA000020 /* AddPlantFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000020 /* AddPlantFlowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		AB000012 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
 		AB000013 /* CloudKitSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitSyncManager.swift; sourceTree = "<group>"; };
 		AB000014 /* PlantPal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlantPal.entitlements; sourceTree = "<group>"; };
+		AB000020 /* AddPlantFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantFlowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				AB000007 /* CalendarView.swift */,
 				AB000008 /* AnalyticsView.swift */,
 				AB000009 /* SettingsView.swift */,
+				AE000008 /* Onboarding */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -136,6 +139,14 @@
 				AB000013 /* CloudKitSyncManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		AE000008 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				AB000020 /* AddPlantFlowView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +236,7 @@
 				AA000011 /* NotificationManager.swift in Sources */,
 				AA000012 /* NotificationDelegate.swift in Sources */,
 				AA000013 /* CloudKitSyncManager.swift in Sources */,
+				AA000020 /* AddPlantFlowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
