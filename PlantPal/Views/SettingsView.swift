@@ -7,6 +7,7 @@ struct SettingsView: View {
     @AppStorage("reminderMinute") private var reminderMinute: Int = 0
     @AppStorage("wateringRemindersEnabled") private var wateringRemindersEnabled = true
     @State private var showingPrivacyPolicy = false
+    @State private var showingTermsOfService = false
     @State private var showingDeleteConfirmation = false
     @State private var notificationTime = Date()
 
@@ -30,6 +31,9 @@ struct SettingsView: View {
             .navigationTitle("Settings")
             .sheet(isPresented: $showingPrivacyPolicy) {
                 PrivacyPolicyView()
+            }
+            .sheet(isPresented: $showingTermsOfService) {
+                TermsOfServiceView()
             }
             .confirmationDialog(
                 "Delete All Plant Data",
@@ -165,6 +169,20 @@ struct SettingsView: View {
             .foregroundStyle(.primary)
             .accessibilityIdentifier("privacyPolicyButton")
 
+            Button {
+                showingTermsOfService = true
+            } label: {
+                HStack {
+                    Label("Terms of Service", systemImage: "doc.text")
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .font(.caption)
+                        .foregroundStyle(.tertiary)
+                }
+            }
+            .foregroundStyle(.primary)
+            .accessibilityIdentifier("termsOfServiceButton")
+
             Link(destination: URL(string: "mailto:support@chadnewbry.com")!) {
                 Label("Contact Support", systemImage: "envelope")
             }
@@ -268,28 +286,46 @@ struct PrivacyPolicyView: View {
                     Group {
                         sectionBlock(
                             title: "Overview",
-                            body: "PlantPal is designed with your privacy in mind. We collect minimal data and store everything on your device and your personal iCloud account."
+                            body: "PlantPal is designed with your privacy in mind. We do not collect, transmit, or sell your personal data. Everything stays on your device and your personal iCloud account."
                         )
 
                         sectionBlock(
                             title: "Data We Collect",
                             body: """
-                            • Plant names, species, and care schedules you enter
-                            • Watering history and care events
+                            • Plant names, species, photos, and notes you enter
+                            • Care schedules (watering, fertilizing, repotting, light tracking)
+                            • Care event history and calendar data
                             • App preferences and settings
-                            
-                            All data is stored locally on your device and synced to your personal iCloud account. We do not collect analytics, usage data, or personal information.
+
+                            All data is stored locally using Core Data. We do not collect analytics, usage data, or personal information.
                             """
                         )
 
                         sectionBlock(
                             title: "iCloud Sync",
-                            body: "If you have iCloud enabled, your plant data syncs across your devices using Apple's CloudKit. This data is stored in your private iCloud database and is not accessible to us or any third party."
+                            body: "If you have iCloud enabled, your plant data syncs across your devices using Apple's CloudKit. This data is stored in your private iCloud database, encrypted in transit and at rest by Apple, and is not accessible to us or any third party."
                         )
 
                         sectionBlock(
+                            title: "AI Plant Health",
+                            body: "PlantPal's AI plant health analysis runs entirely on your device using Apple's on-device machine learning frameworks. No photos or health data are sent to external servers."
+                        )
+                    }
+
+                    Group {
+                        sectionBlock(
                             title: "Notifications",
-                            body: "PlantPal uses local notifications to remind you about watering schedules. These notifications are generated entirely on your device and no data is sent externally."
+                            body: "PlantPal uses local notifications for care reminders. These are generated entirely on your device — no data is sent externally."
+                        )
+
+                        sectionBlock(
+                            title: "Apple Watch & Widgets",
+                            body: "The Apple Watch app and Home Screen widgets display your plant care data locally. No data is transmitted externally."
+                        )
+
+                        sectionBlock(
+                            title: "Siri Integration",
+                            body: "PlantPal provides data to Siri locally through App Intents. Voice interactions are handled by Apple according to Apple's privacy policy."
                         )
 
                         sectionBlock(
@@ -299,12 +335,17 @@ struct PrivacyPolicyView: View {
 
                         sectionBlock(
                             title: "Data Deletion",
-                            body: "You can delete all your data at any time from Settings > Data Management > Delete All Data. This removes all plant data from your device."
+                            body: "You can delete all your data from Settings > Data Management > Delete All Data. To remove iCloud data, manage it in your iCloud storage settings."
+                        )
+
+                        sectionBlock(
+                            title: "Children's Privacy",
+                            body: "PlantPal does not knowingly collect any personal information from anyone, including children under 13."
                         )
 
                         sectionBlock(
                             title: "Contact",
-                            body: "If you have questions about this privacy policy, contact us at support@chadnewbry.com."
+                            body: "Questions? Contact us at support@chadnewbry.com."
                         )
                     }
 
@@ -334,6 +375,7 @@ struct PrivacyPolicyView: View {
         }
     }
 }
+
 
 #if DEBUG
 #Preview {
