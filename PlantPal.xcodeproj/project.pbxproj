@@ -27,6 +27,7 @@
 		AA000012 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000012 /* NotificationDelegate.swift */; };
 		AA000013 /* CloudKitSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000013 /* CloudKitSyncManager.swift */; };
 		AA000020 /* AddPlantFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000020 /* AddPlantFlowView.swift */; };
+		AF000002 /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF000001 /* TermsOfServiceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		AB000013 /* CloudKitSyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitSyncManager.swift; sourceTree = "<group>"; };
 		AB000014 /* PlantPal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlantPal.entitlements; sourceTree = "<group>"; };
 		AB000020 /* AddPlantFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantFlowView.swift; sourceTree = "<group>"; };
+		AF000001 /* TermsOfServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				AB000008 /* AnalyticsView.swift */,
 				AB000009 /* SettingsView.swift */,
 				AE000008 /* Onboarding */,
+				AF000003 /* Legal */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +150,14 @@
 				AB000020 /* AddPlantFlowView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		AF000003 /* Legal */ = {
+			isa = PBXGroup;
+			children = (
+				AF000001 /* TermsOfServiceView.swift */,
+			);
+			path = Legal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +238,7 @@
 				AA000007 /* CalendarView.swift in Sources */,
 				AA000008 /* AnalyticsView.swift in Sources */,
 				AA000009 /* SettingsView.swift in Sources */,
+				AF000002 /* TermsOfServiceView.swift in Sources */,
 				AA00000B /* PlantPal.xcdatamodeld in Sources */,
 				AA00000C /* PersistenceController.swift in Sources */,
 				AA00000D /* CareType.swift in Sources */,
