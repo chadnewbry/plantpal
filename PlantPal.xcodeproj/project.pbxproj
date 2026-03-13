@@ -28,6 +28,10 @@
 		AA000013 /* CloudKitSyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000013 /* CloudKitSyncManager.swift */; };
 		AA000020 /* AddPlantFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000020 /* AddPlantFlowView.swift */; };
 		AF000002 /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF000001 /* TermsOfServiceView.swift */; };
+AA00000B /* PlantPalProManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00000B /* PlantPalProManager.swift */; };
+AA00000C /* PurchasesDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00000C /* PurchasesDelegateHandler.swift */; };
+AA00000D /* ProPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00000D /* ProPaywallView.swift */; };
+AA00000E /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = CC000002 /* RevenueCat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,9 @@
 		AB000014 /* PlantPal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlantPal.entitlements; sourceTree = "<group>"; };
 		AB000020 /* AddPlantFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantFlowView.swift; sourceTree = "<group>"; };
 		AF000001 /* TermsOfServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceView.swift; sourceTree = "<group>"; };
+AB00000B /* PlantPalProManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPalProManager.swift; sourceTree = "<group>"; };
+AB00000C /* PurchasesDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesDelegateHandler.swift; sourceTree = "<group>"; };
+AB00000D /* ProPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProPaywallView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA00000E /* RevenueCat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +91,7 @@
 				AE000003 /* Models */,
 				AE000006 /* CoreData */,
 				AE000004 /* Views */,
+				AE000006 /* IAP */,
 				AE000007 /* Services */,
 				AB00000B /* PlantPal.xcdatamodeld */,
 				AB000014 /* PlantPal.entitlements */,
@@ -160,6 +169,16 @@
 			path = Legal;
 			sourceTree = "<group>";
 		};
+AE000006 /* IAP */ = {
+	isa = PBXGroup;
+	children = (
+		AB00000B /* PlantPalProManager.swift */,
+		AB00000C /* PurchasesDelegateHandler.swift */,
+		AB00000D /* ProPaywallView.swift */,
+	);
+	path = IAP;
+	sourceTree = "<group>";
+};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,6 +197,9 @@
 			name = PlantPal;
 			productName = PlantPal;
 			productReference = AC000001 /* PlantPal.app */;
+			packageProductDependencies = (
+				CC000002 /* RevenueCat */,
+			);
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -205,6 +227,9 @@
 			);
 			mainGroup = AE000001;
 			productRefGroup = AE000005 /* Products */;
+			packageReferences = (
+				CC000001 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+			);
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -238,6 +263,9 @@
 				AA000007 /* CalendarView.swift in Sources */,
 				AA000008 /* AnalyticsView.swift in Sources */,
 				AA000009 /* SettingsView.swift in Sources */,
+				AA00000B /* PlantPalProManager.swift in Sources */,
+				AA00000C /* PurchasesDelegateHandler.swift in Sources */,
+				AA00000D /* ProPaywallView.swift in Sources */,
 				AF000002 /* TermsOfServiceView.swift in Sources */,
 				AA00000B /* PlantPal.xcdatamodeld in Sources */,
 				AA00000C /* PersistenceController.swift in Sources */,
@@ -447,5 +475,25 @@
 /* End XCConfigurationList section */
 
 	};
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC000001 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC000002 /* RevenueCat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC000001 /* XCRemoteSwiftPackageReference "purchases-ios" */;
+			productName = RevenueCat;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 	rootObject = B2000001 /* Project object */;
 }
