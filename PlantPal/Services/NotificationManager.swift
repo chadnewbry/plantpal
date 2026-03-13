@@ -65,6 +65,7 @@ final class NotificationManager: ObservableObject {
         guard isAuthorized else {
             let granted = await requestAuthorization()
             guard granted else { return }
+            return
         }
 
         let content = UNMutableNotificationContent()
