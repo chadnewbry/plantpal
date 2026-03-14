@@ -21,6 +21,17 @@ struct SettingsView: View {
                     }
                 }
 
+                Section("Help") {
+                    Button {
+                        let email = config.review?.contactEmail ?? "chad.newbry@gmail.com"
+                        if let url = URL(string: "mailto:\(email)") {
+                            UIApplication.shared.open(url)
+                        }
+                    } label: {
+                        Label("Contact Support", systemImage: "envelope")
+                    }
+                }
+
                 Section("About") {
                     LabeledContent("Version", value: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0")
                     if let appName = config.appName {
