@@ -5,7 +5,7 @@ import RevenueCat
 final class PlantPalProManager: ObservableObject {
     static let shared = PlantPalProManager()
 
-    static let apiKey = "appl_REPLACE_WITH_REVENUECAT_API_KEY"
+    static var apiKey: String { AppConfig.shared.revenueCat?.apiKey ?? "" }
     static let entitlementID = "pro"
     static let productID = "com.chadnewbry.plantpal.pro"
 

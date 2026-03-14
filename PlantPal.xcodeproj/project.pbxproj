@@ -16,6 +16,8 @@
 		AA000007 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000007 /* CalendarView.swift */; };
 		AA000008 /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000008 /* AnalyticsView.swift */; };
 		AA000009 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000009 /* SettingsView.swift */; };
+ttttDD000005 /* Config */,
+ttttDD000004 /* app-config.json */,
 		AA00000A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB00000A /* Assets.xcassets */; };
 		AA00000B /* PlantPal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB00000B /* PlantPal.xcdatamodeld */; };
 		AA00000C /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00000C /* PersistenceController.swift */; };
@@ -32,6 +34,8 @@ AA00000B /* PlantPalProManager.swift in Sources */ = {isa = PBXBuildFile; fileRe
 AA00000C /* PurchasesDelegateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00000C /* PurchasesDelegateHandler.swift */; };
 AA00000D /* ProPaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB00000D /* ProPaywallView.swift */; };
 AA00000E /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = CC000002 /* RevenueCat */; };
+ttDD000001 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000002 /* AppConfig.swift */; };
+ttDD000003 /* app-config.json in Resources */ = {isa = PBXBuildFile; fileRef = DD000004 /* app-config.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,8 @@ AA00000E /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = CC00
 		AB000007 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		AB000008 /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
 		AB000009 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+ttttDD000005 /* Config */,
+ttttDD000004 /* app-config.json */,
 		AB00000A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC000001 /* PlantPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlantPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB00000B /* PlantPal.xcdatamodeld */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlantPal.xcdatamodeld; sourceTree = "<group>"; };
@@ -61,6 +67,8 @@ AA00000E /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = CC00
 AB00000B /* PlantPalProManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPalProManager.swift; sourceTree = "<group>"; };
 AB00000C /* PurchasesDelegateHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasesDelegateHandler.swift; sourceTree = "<group>"; };
 AB00000D /* ProPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProPaywallView.swift; sourceTree = "<group>"; };
+ttDD000002 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+ttDD000004 /* app-config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "app-config.json"; path = "../.asc/app-config.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,8 @@ AB00000D /* ProPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType
 				AE000007 /* Services */,
 				AB00000B /* PlantPal.xcdatamodeld */,
 				AB000014 /* PlantPal.entitlements */,
+ttttDD000005 /* Config */,
+ttttDD000004 /* app-config.json */,
 				AB00000A /* Assets.xcassets */,
 			);
 			path = PlantPal;
@@ -123,6 +133,14 @@ AB00000D /* ProPaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType
 			path = Views;
 			sourceTree = "<group>";
 		};
+ttDD000005 /* Config */ = {
+tttisa = PBXGroup;
+tttchildren = (
+ttttDD000002 /* AppConfig.swift */,
+ttt);
+tttpath = Config;
+tttsourceTree = "<group>";
+tt};
 		AE000005 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +262,7 @@ AE000006 /* IAP */ = {
 			buildActionMask = 2147483647;
 			files = (
 				AA00000A /* Assets.xcassets in Resources */,
+ttttDD000003 /* app-config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +296,7 @@ AE000006 /* IAP */ = {
 				AA000012 /* NotificationDelegate.swift in Sources */,
 				AA000013 /* CloudKitSyncManager.swift in Sources */,
 				AA000020 /* AddPlantFlowView.swift in Sources */,
+ttttDD000001 /* AppConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

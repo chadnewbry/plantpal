@@ -1,0 +1,21 @@
+{
+  "bundleId": "com.chadnewbry.plantpal",
+  "appName": "PlantPal",
+  "copyright": "© 2026 Chad Newbry",
+  "urls": {
+    "website": "https://chadnewbry.github.io/plantpal/",
+    "privacyPolicy": "https://chadnewbry.github.io/plantpal/privacy",
+    "termsOfService": "https://chadnewbry.github.io/plantpal/terms",
+    "support": "https://chadnewbry.github.io/plantpal/support"
+  },
+  "revenueCat": {
+    "apiKey": "appl_YOUR_PRODUCTION_KEY_HERE"
+  },
+  "review": {
+    "demoAccountRequired": false,
+    "contactFirstName": "Chad",
+    "contactLastName": "Newbry",
+    "contactEmail": "chad.newbry@gmail.com",
+    "contactPhone": "+15417605021"
+  }
+}

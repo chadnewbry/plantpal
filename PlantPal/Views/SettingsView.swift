@@ -1,58 +1,35 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject private var proManager: PlantPalProManager
-    @State private var showPaywall = false
+    private let config = AppConfig.shared
 
     var body: some View {
         NavigationStack {
             List {
-                Section {
-                    if proManager.isPro {
-                        HStack {
-                            Label("PlantPal Pro", systemImage: "leaf.circle.fill")
-                                .foregroundStyle(.green)
-                            Spacer()
-                            Text("Active")
-                                .font(.subheadline)
-                                .foregroundStyle(.green)
-                                .fontWeight(.medium)
-                        }
-                    } else {
-                        Button {
-                            showPaywall = true
-                        } label: {
-                            HStack {
-                                Label("Upgrade to Pro", systemImage: "leaf.circle.fill")
-                                Spacer()
-                                Text("$6.99")
-                                    .font(.subheadline)
-                                    .foregroundStyle(.secondary)
-                                Image(systemName: "chevron.right")
-                                    .font(.caption)
-                                    .foregroundStyle(.tertiary)
-                            }
-                        }
-
-                        Button("Restore Purchase") {
-                            Task {
-                                try? await proManager.restorePurchases()
-                            }
-                        }
-                        .foregroundStyle(.secondary)
+                Section("Links") {
+                    if let url = URL(string: config.urls.website) {
+                        Link("Website", destination: url)
                     }
-                } header: {
-                    Text("PlantPal Pro")
+                    if let url = URL(string: config.urls.privacyPolicy) {
+                        Link("Privacy Policy", destination: url)
+                    }
+                    if let url = URL(string: config.urls.termsOfService) {
+                        Link("Terms of Service", destination: url)
+                    }
+                    if let url = URL(string: config.urls.support) {
+                        Link("Support", destination: url)
+                    }
                 }
 
                 Section("About") {
-                    LabeledContent("Version", value: "1.0.0")
+                    LabeledContent("Version", value: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0")
+                    if let appName = config.appName {
+                        LabeledContent("App", value: appName)
+                    }
+                    LabeledContent("Copyright", value: config.copyright)
                 }
             }
             .navigationTitle("Settings")
-            .sheet(isPresented: $showPaywall) {
-                ProPaywallView()
-            }
         }
     }
 }
@@ -60,6 +37,5 @@ struct SettingsView: View {
 #if DEBUG
 #Preview {
     SettingsView()
-        .environmentObject(PlantPalProManager.shared)
 }
 #endif
