@@ -11,6 +11,8 @@
 		AA000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000002 /* ContentView.swift */; };
 		AA000003 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000003 /* Plant.swift */; };
 		AA000004 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000004 /* PreviewData.swift */; };
+				AA000010 /* ScreenshotSampleData.swift in Sources */,
+		AA000010 /* ScreenshotSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000010 /* ScreenshotSampleData.swift */; };
 		AA000005 /* PlantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000005 /* PlantListView.swift */; };
 		AA000006 /* PlantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000006 /* PlantDetailView.swift */; };
 		AA000007 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000007 /* CalendarView.swift */; };
@@ -43,6 +45,7 @@ ttDD000003 /* app-config.json in Resources */ = {isa = PBXBuildFile; fileRef = D
 		AB000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AB000003 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		AB000004 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		AB000010 /* ScreenshotSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotSampleData.swift; sourceTree = "<group>"; };
 		AB000005 /* PlantListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantListView.swift; sourceTree = "<group>"; };
 		AB000006 /* PlantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantDetailView.swift; sourceTree = "<group>"; };
 		AB000007 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@ ttDD000004 /* app-config.json */ = {isa = PBXFileReference; lastKnownFileType = 
 				AB000001 /* PlantPalApp.swift */,
 				AB000002 /* ContentView.swift */,
 				AE000003 /* Models */,
+				AE000010 /* Utilities */,
 				AE000006 /* CoreData */,
 				AE000004 /* Views */,
 				AE000006 /* IAP */,
@@ -111,12 +115,21 @@ ttttDD000004 /* app-config.json */,
 			sourceTree = "<group>";
 		};
 		AE000003 /* Models */ = {
+				AE000010 /* Utilities */,
 			isa = PBXGroup;
 			children = (
 				AB000004 /* PreviewData.swift */,
 				AB000003 /* Plant.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		AE000010 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AB000010 /* ScreenshotSampleData.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		AE000004 /* Views */ = {
@@ -277,6 +290,7 @@ ttttDD000003 /* app-config.json in Resources */,
 				AA000002 /* ContentView.swift in Sources */,
 				AA000003 /* Plant.swift in Sources */,
 				AA000004 /* PreviewData.swift in Sources */,
+				AA000010 /* ScreenshotSampleData.swift in Sources */,
 				AA000005 /* PlantListView.swift in Sources */,
 				AA000006 /* PlantDetailView.swift in Sources */,
 				AA000007 /* CalendarView.swift in Sources */,

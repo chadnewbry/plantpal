@@ -1,18 +1,19 @@
 import SwiftUI
-import RevenueCat
 
 @main
 struct PlantPalApp: App {
-    @State private var useDummyData = CommandLine.arguments.contains("-dummy-data")
-
-    init() {
-        PlantPalProManager.shared.configure()
-    }
+    @State private var useDummyData: Bool = {
+        #if DEBUG
+        if ScreenshotSampleData.isScreenshotMode {
+            return true
+        }
+        #endif
+        return CommandLine.arguments.contains("-dummy-data")
+    }()
 
     var body: some Scene {
         WindowGroup {
             ContentView(useDummyData: useDummyData)
-                .environmentObject(PlantPalProManager.shared)
         }
     }
 }

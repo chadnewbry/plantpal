@@ -1,0 +1,36 @@
+{
+  "appName": "PlantPal",
+  "bundleId": "com.chadnewbry.plantpal",
+  "theme": {
+    "backgroundColor": "#1B5E20",
+    "textColor": "#FFFFFF",
+    "accentColor": "#81C784"
+  },
+  "screenshots": [
+    {
+      "filename": "01-my-plants.png",
+      "header": "All Your Plants,\nOne Place",
+      "subtitle": "Track watering schedules and care needs effortlessly"
+    },
+    {
+      "filename": "02-plant-detail.png",
+      "header": "Know Every\nDetail",
+      "subtitle": "Species info, watering history, and care notes at a glance"
+    },
+    {
+      "filename": "03-calendar.png",
+      "header": "Never Miss\na Watering",
+      "subtitle": "Stay on top of your plant care schedule"
+    },
+    {
+      "filename": "04-analytics.png",
+      "header": "Watch Them\nThrive",
+      "subtitle": "Track plant health trends over time"
+    },
+    {
+      "filename": "05-settings.png",
+      "header": "Make It\nYours",
+      "subtitle": "Customize PlantPal to fit your routine"
+    }
+  ]
+}

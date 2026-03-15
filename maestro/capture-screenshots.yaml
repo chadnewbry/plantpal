@@ -1,0 +1,47 @@
+appId: com.chadnewbry.plantpal
+name: "Capture App Store Screenshots"
+---
+
+# 1. Launch with clean state + screenshot mode to seed data
+- launchApp:
+    appId: com.chadnewbry.plantpal
+    clearState: true
+    arguments:
+      --screenshot-mode: ""
+
+# 2. Relaunch without clearing so views pick up seeded data
+- launchApp:
+    appId: com.chadnewbry.plantpal
+    clearState: false
+    arguments:
+      --screenshot-mode: ""
+
+# Screenshot 1: My Plants list
+- waitForAnimationToEnd
+- takeScreenshot: "01-my-plants"
+
+# Screenshot 2: Plant detail
+- tapOn: "Monstera"
+- waitForAnimationToEnd
+- takeScreenshot: "02-plant-detail"
+
+# Navigate back
+- back
+
+# Screenshot 3: Calendar tab
+- tapOn:
+    id: "calendarTab"
+- waitForAnimationToEnd
+- takeScreenshot: "03-calendar"
+
+# Screenshot 4: Analytics tab
+- tapOn:
+    id: "analyticsTab"
+- waitForAnimationToEnd
+- takeScreenshot: "04-analytics"
+
+# Screenshot 5: Settings tab
+- tapOn:
+    id: "settingsTab"
+- waitForAnimationToEnd
+- takeScreenshot: "05-settings"
