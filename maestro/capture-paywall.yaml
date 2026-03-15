@@ -1,0 +1,20 @@
+appId: com.chadnewbry.plantpal
+name: "Capture Paywall Screenshot"
+---
+
+- launchApp:
+    appId: com.chadnewbry.plantpal
+    clearState: true
+
+# Navigate to Settings tab
+- tapOn:
+    id: "settingsTab"
+- waitForAnimationToEnd
+
+# Tap Upgrade to Pro button
+- tapOn:
+    id: "upgradeToProButton"
+- waitForAnimationToEnd
+
+# Capture the paywall screenshot
+- takeScreenshot: paywall

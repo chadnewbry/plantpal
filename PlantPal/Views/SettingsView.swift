@@ -3,10 +3,24 @@ import SwiftUI
 struct SettingsView: View {
     private let feedbackEmail = "chad.newbry@gmail.com"
     private let appName = "PlantPal"
+    @ObservedObject private var proManager = PlantPalProManager.shared
+    @State private var showPaywall = false
 
     var body: some View {
         NavigationStack {
             List {
+                if !proManager.isPro {
+                    Section {
+                        Button {
+                            showPaywall = true
+                        } label: {
+                            Label("Upgrade to Pro", systemImage: "leaf.circle.fill")
+                                .foregroundStyle(.green)
+                        }
+                        .accessibilityIdentifier("upgradeToProButton")
+                    }
+                }
+
                 Section("Feedback") {
                     Button {
                         let subject = "Feedback: \(appName)"
@@ -24,6 +38,9 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Settings")
+            .sheet(isPresented: $showPaywall) {
+                ProPaywallView()
+            }
         }
     }
 }
